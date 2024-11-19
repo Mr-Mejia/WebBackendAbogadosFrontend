@@ -1,0 +1,20 @@
+<div class="container">    
+    <a  [routerLink]="['/listaCategoriaProceso']" class="btn btn-info btn-block left">Volver</a>
+    <div class="row rowForm"> 
+    <h2 class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3"> {{title}} Categoria Proceso</h2>  
+        <form>
+            <span *ngIf="edit">
+                <label>CAT. PROCESO</label>
+                <input type="text" name="categoria_proc" id="categoria_proc" placeholder="id_categoria_proc" [(ngModel)]="CategoriaProc.categoria_proc" class="form-control" autofocus> 
+                </span>
+            <label>DESCRIPCIÓN</label>
+            <input type="text" name="descripcion" id="descripcion" [(ngModel)]="CategoriaProc.descripcion" class="form-control">
+
+            <label>ESTADO CATEGORIA</label>
+            <input type="text" name="estado cat proceso" id="estado_cat_pro" [(ngModel)]="CategoriaProc.estado_cat_pro" class="form-control">
+
+            <button id="btn_actualizar" *ngIf="edit" class="btn btn-success btn-block" (click)="actualizar()">ACTUALIZAR</button>
+            <button id="btn_guardar" *ngIf="!edit" class="btn btn-success btn-block" (click)="salvar()">CREAR Y GUARDAR</button>
+        </form>
+    </div>
+</div>

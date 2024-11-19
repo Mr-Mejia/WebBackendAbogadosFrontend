@@ -1,0 +1,40 @@
+<div class="container">    
+    <a  [routerLink]="['/listaProcesos']" class="btn btn-info btn-block left">Volver</a>
+    <div class="row rowForm"> 
+    <h2 class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">{{title}} Proceso</h2>  
+        <form>
+            <span *ngIf="edit">
+            <label>ID PROCESO</label>
+            <input type="text" name="id_proceso" id="id_proceso" placeholder="id" [(ngModel)]="Proceso.id_proceso" class="form-control" autofocus> 
+            </span>
+
+            <label>ID CLIENTE</label>
+            <input type="text" name="id_cliente" id="id_cliente" [(ngModel)]="Proceso.id_cliente" class="form-control" >  
+
+            <label>ID ABOGADO</label>
+            <input type="text" name="id_abogado" id="id_abogado" [(ngModel)]="Proceso.id_abogado" class="form-control">
+
+            <label>ESTADO PROCESO</label>
+            <input type="text" name="estado_actual" id="estado_actual" [(ngModel)]="Proceso.estado_actual" class="form-control">
+
+            <label>ID RADICADO</label>
+            <input type="text" name="id_radicado" id="id_radicado" [(ngModel)]="Proceso.id_radicado" class="form-control">
+
+            <label>FECHA CREACIÓN</label>
+            <input type="text" name="privilegio" id="privilegio" [(ngModel)]="Proceso.fecha_creacion" class="form-control">
+
+            <label>FECHA ASIGNACIÓN</label>
+            <input type="text" name="fecha_asignacion" id="fecha_asignacion" [(ngModel)]="Proceso.fecha_asignacion" class="form-control">
+
+            <label>CATEGORIA PROCESO</label>
+            <input type="text" name="categoria_proc" id="categoria_proc" [(ngModel)]="Proceso.categoria_proc" class="form-control">
+
+            <label>ID EVENTO</label>
+            <input type="text" name="id_evento" id="id_evento" [(ngModel)]="Proceso.id_evento" class="form-control">
+
+            <button id="btn_actualizar" *ngIf="edit" class="btn btn-success btn-block" (click)="actualizar()">ACTUALIZAR</button>
+            <button id="btn_guardar" *ngIf="!edit" class="btn btn-success btn-block" (click)="salvar()">CREAR Y GUARDAR</button>
+        </form>
+    </div>
+</div>
+

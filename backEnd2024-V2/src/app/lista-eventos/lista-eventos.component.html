@@ -1,0 +1,30 @@
+<div class="container">
+    <a  [routerLink]="['/listaProcesos']" class="btn btn-info btn-block left" *ngIf="filterList">Volver</a>
+    <h2 class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">Lista Eventos</h2>
+  
+    <div class="row">
+            <div class="table-responsive">
+                <table id="productTable" class="table table-striped table-hover">
+                    <thead>
+                        <th scope="col" class="">ID EVENTO</th>
+                        <th scope="col" class="">ID PROCESO</th>
+                        <th scope="col" class="">ANOTACIÓN</th>
+                        <th scope="col" class="">FECHA EVENTO</th>
+                        <th scope="col" class="">DOCUMENTO</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let modelo of datos">
+                            <td>{{modelo.id_evento}}</td>
+                            <td>{{modelo.id_proceso}}</td>
+                            <td>{{modelo.anotacion}}</td>
+                            <td>{{modelo.fecha_evento}}</td>
+                            <td>{{modelo.documento}}</td> 
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row"> 
+                <a  [routerLink]="['/c-eventos']" class="btn btn-info btn-block">AGREGAR NUEVO</a>
+            </div>
+    </div>
+</div>

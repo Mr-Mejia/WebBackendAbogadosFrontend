@@ -1,0 +1,40 @@
+<div class="container">
+    
+    <h2 class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">Procesos</h2>
+  
+    <div class="row">
+            <div class="table-responsive">
+                <table id="productTable" class="table table-striped table-hover">
+                    <thead>
+                        <th scope="col" class="">ID PROCESO</th>
+                        <th scope="col" class="">CLIENTE</th>
+                        <th scope="col" class="">ABOGADO</th>
+                        <th scope="col" class="">ESTADO</th>
+                        <th scope="col" class="">ID RADICADO</th>
+                        <th scope="col" class="">FECHA CREACIÓN</th>
+                        <th scope="col" class="">FECHA ASIGNACIÓN</th>
+                        <th scope="col" class="">CATEGORIA PROCESO</th>
+                        <th scope="col" class="">EVENTOS</th>
+                        <th scope="col" class="">EDICIÓN PROCESO</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let modelo of datos">
+                            <td>{{modelo.id_proceso}}</td>
+                            <td>{{modelo.cliente.nombre_cli}} {{modelo.cliente.apellido_cli}}</td>
+                            <td>{{modelo.abogado.nombre_abo}} {{modelo.abogado.apellido_abo}}</td>
+                            <td>{{modelo.estado_actual}}</td>
+                            <td>{{modelo.id_radicado}}</td>
+                            <td>{{modelo.fecha_creacion}}</td>
+                            <td>{{modelo.fecha_asignacion}}</td>
+                            <td>{{modelo.categoria_proc}}</td>
+                            <td><a [routerLink]="['/listaEventosByIdProceso', modelo.id_proceso]" class="btn btn-info btn-block">Ver eventos</a></td>
+                            <td><a [routerLink]="['/u-proceso/', modelo.id_proceso]" class="btn btn-info btn-block">Editar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+    <div class="row"> 
+        <a [routerLink]="['/c-proceso']" class="btn btn-info btn-block">AGREGAR NUEVO</a>
+    </div>
+  </div>

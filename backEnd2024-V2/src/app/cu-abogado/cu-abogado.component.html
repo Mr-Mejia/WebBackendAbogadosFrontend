@@ -1,0 +1,37 @@
+<div class="container">    
+    <a  [routerLink]="['/listaAbogados']" class="btn btn-info btn-block left">Volver</a>
+    <div class="row rowForm"> 
+    <h2 class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">{{title}} Abogados</h2>  
+        <form>
+            <span *ngIf="edit">
+            <label>ID ABOGADO</label>
+            <input type="text" name="abogado" placeholder="id_abogado" [(ngModel)]="Abogado.id_abogado" class="form-control" autofocus> 
+            </span>
+
+            <label>CÉDULA</label>
+            <input type="text" name="cedula" id="cedula_abo" [(ngModel)]="Abogado.cedula_abo" class="form-control">  
+
+            <label>NOMBRE</label>
+            <input type="text" name="nombre abogado" id="nombre_abo" [(ngModel)]="Abogado.nombre_abo" class="form-control">
+
+            <label>APELLIDO</label>
+            <input type="text" name="apellido abogado" id="apellido_abo" [(ngModel)]="Abogado.apellido_abo" class="form-control">
+
+            <label>CATEGORIA EMPLEAD</label>
+            <input type="text" name="categoria emp" id="id_categoria_emp" [(ngModel)]="Abogado.id_categoria_emp" class="form-control">
+
+            <label>ESTADO</label>
+            <input type="text" name="estado abogado" id="estado_abo" [(ngModel)]="Abogado.estado_abo" class="form-control">
+
+            <label>FECHA INGRESO</label>
+            <input type="text" name="fecha ingreso" id="fecha_ingreso" [(ngModel)]="Abogado.fecha_ingreso" class="form-control">
+
+            <label>FECHA RETIRO</label>
+            <input type="text" name="fecha retiro" id="fecha_retiro" [(ngModel)]="Abogado.fecha_retiro" class="form-control">
+
+            <button id="btn_actualizar" *ngIf="edit" class="btn btn-success btn-block" (click)="actualizar()">ACTUALIZAR</button>
+            <button id="btn_guardar" *ngIf="!edit" class="btn btn-success btn-block" (click)="salvar()">CREAR Y GUARDAR</button>
+
+        </form>
+    </div>
+</div>

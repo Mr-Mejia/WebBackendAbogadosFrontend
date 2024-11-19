@@ -1,0 +1,24 @@
+<div class="container">    
+    <a  [routerLink]="['/listaCE']" class="btn btn-info btn-block left">Volver</a>
+    <div class="row rowForm"> 
+    <h2 class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">{{title}} Categoria de Empleados</h2>  
+        <form>
+            <span *ngIf="edit">
+            <label>ID CAT. EMPL.</label>
+            <input type="text" name="id_categoria_emp" placeholder="id_categoria_emp" [(ngModel)]="CategoriaE.id_categoria_emp" class="form-control" autofocus>   
+            </span>
+
+            <label>NOMBRE</label>
+            <input type="text" name="nombre_cat_emp" id="nombre_cat_emp" [(ngModel)]="CategoriaE.nombre_cat_emp" class="form-control">
+
+            <label>Estado</label>
+            <input type="text" name="estado_cat_emp" id="estado_cat_emp" [(ngModel)]="CategoriaE.estado_cat_emp" class="form-control">
+
+            <label>Privilegio(s)</label>
+            <input type="text" name="privilegio" id="privilegio" [(ngModel)]="CategoriaE.privilegio" class="form-control">
+
+            <button id="btn_actualizar" *ngIf="edit" class="btn btn-success btn-block" (click)="actualizar()">ACTUALIZAR</button>
+            <button id="btn_guardar" *ngIf="!edit" class="btn btn-success btn-block" (click)="salvar()">CREAR Y GUARDAR</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="container">
+    <h2 class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">Lista de Categoria de Empleados</h2>
+      
+    <div class="row"> 
+        <div class="table-responsive">
+            <table id="productTable" class="table table-striped table-hover">
+                <thead>
+                    <th scope="col" class="">ID</th>
+                    <th scope="col" class="">NOMBRE</th>
+                    <th scope="col" class="">ESTADO</th>
+                    <th scope="col" class="">PRIVILEGIO</th>
+                    <th scope="col" class="">EDICIÓN</th>
+                    <th scope="col" class="">ELIMINACIÓN</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let modelo of datos">
+                        <td>{{modelo.id_categoria_emp}}</td>
+                        <td>{{modelo.nombre_cat_emp}}</td>
+                        <td>{{modelo.estado_cat_emp}}</td>
+                        <td>{{modelo.privilegio}}</td>
+                        <td><a  [routerLink]="['/uce', modelo.id_categoria_emp]" class="btn btn-info btn-block">Editar</a></td>
+                        <td><a (click)="borrar(modelo.id_categoria_emp)" class="btn btn-info btn-block">Eliminar</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row"> 
+        <a  [routerLink]="['/cce']" class="btn btn-info btn-block">AGREGAR NUEVO</a>
+    </div>
+</div>

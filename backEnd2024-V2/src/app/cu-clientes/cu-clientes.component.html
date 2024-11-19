@@ -1,0 +1,38 @@
+<div class="container">    
+    <a  [routerLink]="['/listaClientes']" class="btn btn-info btn-block left">Volver</a>
+    <div class="row rowForm"> 
+    <h2 class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">{{title}} Clientes</h2>  
+        <form>
+            <span *ngIf="edit">
+                <label>ID CLIENTE</label>
+                <input type="text" name="id_cliente" placeholder="id_cliente" [(ngModel)]="Cliente.id_cliente" class="form-control" autofocus> 
+                </span> 
+            
+            <label>ID PROCESO</label>
+            <input type="text" name="id_proceso" id="id_proceso" [(ngModel)]="Cliente.id_proceso" class="form-control">  
+
+            <label>NOMBRE CLIENTE</label>
+            <input type="text" name="nombre cliente" id="nombre_cli" [(ngModel)]="Cliente.nombre_cli" class="form-control">
+
+            <label>APELLIDO CLIENTE</label>
+            <input type="text" name="apellido_cli" id="apellido_cli" [(ngModel)]="Cliente.apellido_cli" class="form-control">
+
+            <label>CÉDULA</label>
+            <input type="text" name="cedula_cli" id="cedula_cli" [(ngModel)]="Cliente.cedula_cli" class="form-control">
+
+            <label>TELÉFONO</label>
+            <input type="text" name="telefono_cli" id="telefono_cli" [(ngModel)]="Cliente.telefono_cli" class="form-control">
+
+            <label>CORREO</label>
+            <input type="text" name="correo_cli" id="correo_cli" [(ngModel)]="Cliente.correo_cli" class="form-control">
+
+            <label>DIRECCIÓN</label>
+            <input type="text" name="direccion _cli" id="direccion_cli" [(ngModel)]="Cliente.direccion_cli" class="form-control">
+
+            <button id="btn_actualizar" *ngIf="edit" class="btn btn-success btn-block" (click)="actualizar()">ACTUALIZAR</button>
+            <button id="btn_guardar" *ngIf="!edit" class="btn btn-success btn-block" (click)="salvar()">CREAR Y GUARDAR</button>
+            
+        </form>
+    </div>
+</div>
+

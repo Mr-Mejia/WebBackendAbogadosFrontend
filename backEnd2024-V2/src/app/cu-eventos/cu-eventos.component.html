@@ -1,0 +1,28 @@
+<div class="container">    
+    <a  [routerLink]="['/listaEventos']" class="btn btn-info btn-block left">Volver</a>
+    <div class="row rowForm"> 
+    <h2 class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">{{title}} Abogados</h2>  
+        <form>
+            <span *ngIf="edit">
+            <label>ID EVENTO</label>
+            <input type="text" name="abogado" placeholder="id_abogado" [(ngModel)]="Evento.id_evento" class="form-control" autofocus> 
+            </span>
+
+            <label>ID PROCESO</label>
+            <input type="text" name="cedula" id="cedula_abo" [(ngModel)]="Evento.id_proceso" class="form-control">  
+
+            <label>ANOTACIÓN</label>
+            <input type="text" name="nombre abogado" id="nombre_abo" [(ngModel)]="Evento.anotacion" class="form-control">
+
+            <label>FECHA EVENTO</label>
+            <input type="text" name="apellido abogado" id="apellido_abo" [(ngModel)]="Evento.fecha_evento" class="form-control">
+
+            <label>DOCUMENTO</label>
+            <input type="text" name="categoria emp" id="id_categoria_emp" [(ngModel)]="Evento.documento" class="form-control">
+
+            <button id="btn_actualizar" *ngIf="edit" class="btn btn-success btn-block" (click)="actualizar()">ACTUALIZAR</button>
+            <button id="btn_guardar" *ngIf="!edit" class="btn btn-success btn-block" (click)="salvar()">CREAR Y GUARDAR</button>
+
+        </form>
+    </div>
+</div>

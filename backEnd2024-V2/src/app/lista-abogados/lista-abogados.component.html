@@ -1,0 +1,39 @@
+<div class="container">
+    <h2 class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">Lista de Abogados</h2>
+
+    <div class="row">
+            <div class="table-responsive">
+                <table id="AbogadosTable" class="table table-striped table-hover">
+                    <thead>
+                        <th scope="col" class="">ID ABOGADO</th>
+                        <th scope="col" class="">CÉDULA</th>
+                        <th scope="col" class="">NOMBRE</th>
+                        <th scope="col" class="">APELLIDO</th>
+                        <th scope="col" class="">CATEGORIA</th>
+                        <th scope="col" class="">ESTADO</th>
+                        <th scope="col" class="">FECHA INGRESO</th>
+                        <th scope="col" class="">FECHA RETIRO</th>
+                        <th scope="col" class="">EDICIÓN</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let modelo of datos">
+                            <td>{{modelo.id_abogado}}</td>        
+                            <td>{{modelo.cedula_abo}}</td>
+                            <td>{{modelo.nombre_abo}}</td>
+                            <td>{{modelo.apellido_abo}}</td>
+                            <td>{{modelo.id_categoria_emp}}</td>
+                            <td>{{modelo.estado_abo}}</td>
+                            <td>{{modelo.fecha_ingreso}}</td>
+                            <td>{{modelo.fecha_retiro}}</td>
+                            <td><a [routerLink]="['/u-abogado',modelo.id_abogado]" class="btn btn-info btn-block">Editar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+    <div class="row"> 
+        <a  [routerLink]="['/c-abogado']" class="btn btn-info btn-block">AGREGAR NUEVO</a>
+    </div>
+    
+</div>
+
